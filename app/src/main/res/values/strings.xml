@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Login-Page</string>
+    <string name="start_toggle">Start</string>
+    <string name="stop_toggle">Stop</string>
+</resources>
