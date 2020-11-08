@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="#1B5C56"
     tools:context=".RegisterActivity">
 
     <ScrollView
@@ -42,6 +42,7 @@
                         android:layout_margin="20dp"
                         android:text="Sign-up"
                         android:textStyle="bold"
+                        android:fontFamily="@font/segoeui"
                         android:textColor="#A56CC1"
                         android:textSize="24sp"
                         android:layout_centerHorizontal="true"
@@ -62,6 +63,7 @@
                             android:layout_marginEnd="10dp"
                             android:textSize="18sp"
                             android:textStyle="bold"
+                            android:fontFamily="@font/sourcesanspro_regular"
                             />
 
                         <EditText
@@ -94,6 +96,7 @@
                             android:text="Enter Last Name:"
                             android:layout_marginStart="20dp"
                             android:layout_marginEnd="10dp"
+                            android:fontFamily="@font/sourcesanspro_regular"
                             android:textSize="18sp"
                             android:textColor="#A6ACEC"
                             android:textStyle="bold"
@@ -126,6 +129,7 @@
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="#A6ACEC"
+                        android:fontFamily="@font/sourcesanspro_regular"
                         />
 
 
@@ -154,6 +158,7 @@
                         android:textSize="18sp"
                         android:textColor="#A6ACEC"
                         android:textStyle="bold"
+                        android:fontFamily="@font/sourcesanspro_regular"
                         />
 
 
@@ -182,6 +187,7 @@
                         android:layout_marginHorizontal="20dp"
                         android:textSize="18sp"
                         android:textStyle="bold"
+                        android:fontFamily="@font/sourcesanspro_regular"
                         android:textColor="#A6ACEC"
                         />
 
@@ -211,6 +217,7 @@
                         android:text="Enter Password:"
                         android:layout_marginHorizontal="20dp"
                         android:textSize="18sp"
+                        android:fontFamily="@font/sourcesanspro_regular"
                         android:textColor="#A6ACEC"
                         android:textStyle="bold"
                         />
@@ -249,6 +256,7 @@
                             android:textSize="18sp"
                             android:textColor="#A6ACEC"
                             android:textStyle="bold"
+                            android:fontFamily="@font/sourcesanspro_regular"
                             />
 
                         <TextView
@@ -304,7 +312,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginBottom="5dp"
                         >
                         <TextView

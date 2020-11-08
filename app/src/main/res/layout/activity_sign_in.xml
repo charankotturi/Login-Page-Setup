@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".SignInActivity"
     android:layout_centerInParent="true"
-    android:background="@drawable/background"
+    android:background="#1B5C56"
     >
 
    <RelativeLayout
@@ -16,8 +16,8 @@
        >
 
        <androidx.cardview.widget.CardView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
+           android:layout_width="400dp"
+           android:layout_height="370dp"
            android:layout_margin="20dp"
            app:cardElevation="20dp"
            app:cardCornerRadius="10dp"
@@ -27,7 +27,7 @@
 
            <LinearLayout
                android:layout_width="match_parent"
-               android:layout_height="wrap_content"
+               android:layout_height="match_parent"
                android:orientation="vertical"
                >
 
@@ -39,6 +39,7 @@
                    android:text="Sign-In"
                    android:textStyle="bold"
                    android:textColor="#A56CC1"
+                   android:fontFamily="@font/segoeui"
                    android:textSize="24sp"
                    android:layout_centerHorizontal="true"
                    />
@@ -49,6 +50,7 @@
                    android:text="Enter Email ID:"
                    android:layout_marginHorizontal="20dp"
                    android:textSize="18sp"
+                   android:fontFamily="@font/sourcesanspro_regular"
                    android:textStyle="bold"
                    android:textColor="#A6ACEC"
                    />
@@ -79,6 +81,7 @@
                    android:textSize="18sp"
                    android:textStyle="bold"
                    android:textColor="#A6ACEC"
+                   android:fontFamily="@font/sourcesanspro_regular"
                    />
 
                <EditText
@@ -115,10 +118,12 @@
 
                <RelativeLayout
                    android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_gravity="center"
-                   android:layout_margin="5dp"
-                   >
+                   android:layout_height="match_parent"
+                   android:layout_gravity="center_horizontal"
+                   android:id="@+id/relLayout"
+                   android:layout_margin="10dp"
+                   android:gravity="bottom">
+
                    <TextView
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
