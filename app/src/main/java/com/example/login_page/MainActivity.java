@@ -84,16 +84,18 @@ public class MainActivity extends AppCompatActivity {
             if(email_id != null){
                 ApplicationDataBase db = ApplicationDataBase.getInstance(MainActivity.this);
                 User user = db.userDao().getUserByEmail_id(email_id);
+
                 user.setOnline(true);
-                db.userDao().updateSingleUser(user);
-                if(user != null){
+                new MainWorkerThread(db, user);
+
+                if(user != null) {
                     updateFragment(user);
                 }
+
             }
         }
 
         new ProgressBar().execute();
-
 
     }
 
@@ -227,6 +229,25 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(usersList);
 
         return usersList;
+    }
+
+    public static class MainWorkerThread extends AsyncTask<Void, Void, Void> {
+
+        private userDao dao;
+        private User user;
+
+        public MainWorkerThread(ApplicationDataBase db, User user){
+            this.dao = db.userDao();
+            this.user = user;
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+
+            dao.updateSingleUser(user);
+
+            return null;
+        }
     }
 
     private void initView(){

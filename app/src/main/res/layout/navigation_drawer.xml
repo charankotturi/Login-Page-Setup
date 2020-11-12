@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#B8D5F6"
+    android:background="#FFFFFF"
     >
 
     <LinearLayout
@@ -15,7 +15,7 @@
         android:orientation="vertical"
         android:gravity="bottom"
         android:padding="10dp"
-        android:background="@color/purple_200"
+        android:background="#1B5C56"
         >
         <ImageView
             android:id="@+id/imageView"

@@ -1,12 +1,17 @@
 package com.example.login_page;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.room.RoomDatabase;
+import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Patterns;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -51,8 +56,14 @@ public class RegisterActivity extends AppCompatActivity {
                 String Password = editTextPassword.getText().toString();
                 String Address = editTextSAddress.getText().toString();
 
+                /*
+
+                Inbuilt email id validation " Patterns.EMAIL_ADDRESS.matcher(Email_Id).matches()".
+
+                 */
+
                 if(!firstName.equals("") && !LastName.equals("") && !phoneNumber.equals("") && !Email_Id.equals("") && !Address.equals("") &&
-                    !Password.equals("")){
+                    !Password.equals("") && Patterns.EMAIL_ADDRESS.matcher(Email_Id).matches()){
 
                     int number = Integer.valueOf(phoneNumber);
 
@@ -97,7 +108,6 @@ public class RegisterActivity extends AppCompatActivity {
         /*
         This is an attempt to prompt a message ensuring that confirm message is same as original password!
          */
-
 //        editTextConfirmPass.addTextChangedListener(new TextWatcher() {
 //            @Override
 //            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -121,10 +131,9 @@ public class RegisterActivity extends AppCompatActivity {
 //                }
 //            }
 //        });
-
-
-
     }
+
+
     private boolean uniqueEmail(String email_id){
         ApplicationDataBase dataBase = ApplicationDataBase.getInstance(RegisterActivity.this);
         ArrayList<User> users = (ArrayList<User>) dataBase.userDao().getAllUsers();

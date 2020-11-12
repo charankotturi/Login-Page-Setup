@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -23,6 +24,7 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -60,17 +62,26 @@ public class SignInActivity extends AppCompatActivity {
                 String email_id = editEmail.getText().toString();
                 String password = editPassword.getText().toString();
                 errorCard.setVisibility(View.GONE);
-                if(!email_id.equals("") && !password.equals("")){
+
+                    /*
+
+                Inbuilt email id validation " Patterns.EMAIL_ADDRESS.matcher(Email_Id).matches()".
+
+                 */
+
+                if(!email_id.equals("") && !password.equals("") && Patterns.EMAIL_ADDRESS.matcher(email_id).matches()){
                     ApplicationDataBase db = ApplicationDataBase.getInstance(SignInActivity.this);
                     User verification = db.userDao().getUserByEmail_id(email_id);
 
                     if(verification != null){
                         if (password.equals(verification.getPassword())){
                             Log.d(TAG, "onClick: inside sign-in page >>>>>" + verification.getOnline());
+
                             verification.setOnline(true);
                             Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                             intent.putExtra("OBJECT", verification.getEmail_id());
                             startActivity(intent);
+
                         }else{
                             errorCard.setVisibility(View.VISIBLE);
                             txtSignInErrorMsg.setText("Enter a valid email id or password!");
@@ -100,7 +111,7 @@ public class SignInActivity extends AppCompatActivity {
                 intent1.putExtra("OBJECT", u.getEmail_id());
                 startActivity(intent1);
             }
-
+            
             /*
             *********
             This is for testing the database!
